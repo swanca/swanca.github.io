@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>swanca | Web projects</title>
-  <meta name="description" content="Web projects by Swan Carenini: Plus en Poche, Steffi Couture, AOclair and TrackMyDex.">
+  <meta name="description" content="Web projects by Swan Carenini: TrackMyDex, Plus en Poche, Steffi Couture and AOclair.">
   <link rel="canonical" href="https://swanca.github.io/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="swanca | Web projects">
@@ -17,55 +17,176 @@
   <script src="./assets/js/site.js" defer></script>
 </head>
 <body data-title-fr="swanca | Projets web" data-title-en="swanca | Web projects">
-  <a class="skip-link" href="#main" data-fr="Aller au contenu" data-en="Skip to content">Aller au contenu</a>
+  <a class="skip-link" href="#main" data-fr="Aller au contenu" data-en="Skip to content">Skip to content</a>
   <header class="site-header">
-    <a class="wordmark" href="./" aria-label="swanca, accueil">swanca<span>.</span></a>
-    <nav aria-label="Navigation principale">
-      <a class="active" href="./" data-fr="Projets" data-en="Projects">Projets</a>
-      <a href="./repos/" data-fr="Dépôts" data-en="Repositories">Dépôts</a>
+    <a class="wordmark" href="./" aria-label="swanca, home">swanca<span>.</span></a>
+    <nav aria-label="Main navigation">
+      <a class="active" href="./" data-fr="Projets" data-en="Projects">Projects</a>
+      <a href="./repos/" data-fr="Dépôts" data-en="Repositories">Repositories</a>
     </nav>
     <div class="header-links">
       <a href="https://github.com/swanca" target="_blank" rel="noreferrer">GitHub</a>
       <a href="https://www.linkedin.com/in/swan-c-35044b11a/" target="_blank" rel="noreferrer">LinkedIn</a>
       <button class="theme-toggle" type="button" data-theme-toggle data-fr="Thème" data-en="Theme" aria-pressed="false">Theme</button>
-      <div class="locale-switch" aria-label="Langue">
+      <div class="locale-switch" aria-label="Language">
         <button type="button" data-locale="fr" aria-pressed="false">FR</button>
         <button type="button" data-locale="en" aria-pressed="true">EN</button>
       </div>
     </div>
   </header>
+
   <main id="main">
     <section class="intro">
       <p class="identity">Swan Carenini</p>
-      <h1 data-fr="Sites et outils web." data-en="Websites and digital tools.">Sites et outils web.</h1>
-      <p data-fr="Des produits utiles, simples à utiliser et maintenus dans le temps." data-en="Useful products, simple to use and maintained over time.">Des produits utiles, simples à utiliser et maintenus dans le temps.</p>
-      <a class="text-link" href="./repos/" data-fr="Voir les dépôts GitHub" data-en="View GitHub repositories">Voir les dépôts GitHub</a>
+      <h1 data-fr="Des produits web utiles et maintenus." data-en="Useful web products, built to last.">Useful web products, built to last.</h1>
+      <p data-fr="Conception et développement de services en ligne, du produit grand public à l’outil métier." data-en="Design and development of online services, from consumer products to business tools.">Design and development of online services, from consumer products to business tools.</p>
+      <a class="text-link" href="./repos/" data-fr="Voir les dépôts GitHub" data-en="View GitHub repositories">View GitHub repositories</a>
     </section>
+
     <section class="projects" aria-labelledby="projects-title">
       <div class="section-title">
-        <h2 id="projects-title" data-fr="Projets" data-en="Projects">Projets</h2>
-        <p data-fr="Sites en production et produits en cours." data-en="Live websites and products in progress.">Sites en production et produits en cours.</p>
+        <h2 id="projects-title" data-fr="Projets sélectionnés" data-en="Selected projects">Selected projects</h2>
+        <p data-fr="Sites actuellement en ligne" data-en="Websites currently live">Websites currently live</p>
       </div>
-      <div class="project-grid">
-        <article class="project-card" data-tilt>
-          <a class="project-visual" href="https://trackmydex.com" target="_blank" rel="noreferrer" aria-label="TrackMyDex"><img src="./assets/images/trackmydex.webp" width="1365" height="768" alt="Aperçu complet de TrackMyDex" data-alt-fr="Aperçu complet de TrackMyDex" data-alt-en="Full preview of TrackMyDex"><span>trackmydex.com</span></a>
-          <div class="project-copy"><div class="status live" data-fr="En ligne" data-en="Live">En ligne</div><h3>TrackMyDex</h3><p data-fr="Catalogue et suivi de collection de cartes Pokémon avec prix multilingues." data-en="Pokémon card catalogue and collection tracker with multilingual pricing.">Catalogue et suivi de collection de cartes Pokémon avec prix multilingues.</p><a class="project-link" href="https://trackmydex.com" target="_blank" rel="noreferrer" data-fr="Ouvrir le site" data-en="Visit website">Ouvrir le site</a></div>
+
+      <div class="project-list">
+        <article class="project-showcase">
+          <div class="project-copy">
+            <div class="project-meta"><span class="status live" data-fr="En ligne" data-en="Live">Live</span><span>trackmydex.com</span></div>
+            <h3>TrackMyDex</h3>
+            <p data-fr="Un catalogue Pokémon pour explorer les séries, suivre une collection et consulter les prix du marché dans plusieurs langues." data-en="A Pokémon catalogue for exploring sets, tracking a collection and checking multilingual market prices.">A Pokémon catalogue for exploring sets, tracking a collection and checking multilingual market prices.</p>
+            <ul class="project-features" aria-label="Features">
+              <li data-fr="Catalogue multilingue" data-en="Multilingual catalogue">Multilingual catalogue</li>
+              <li data-fr="Suivi de collection" data-en="Collection tracking">Collection tracking</li>
+              <li data-fr="Prix du marché" data-en="Market prices">Market prices</li>
+            </ul>
+            <a class="project-link" href="https://trackmydex.com" target="_blank" rel="noreferrer" data-fr="Ouvrir TrackMyDex" data-en="Visit TrackMyDex">Visit TrackMyDex</a>
+          </div>
+          <div class="project-gallery" data-carousel tabindex="0" role="region" aria-roledescription="carousel" aria-label="TrackMyDex previews">
+            <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>trackmydex.com</span></div>
+            <div class="carousel-viewport">
+              <figure class="carousel-slide" data-slide-panel>
+                <img src="./assets/images/trackmydex-01.webp" width="1440" height="900" alt="TrackMyDex home catalogue" data-alt-fr="Catalogue d’accueil de TrackMyDex" data-alt-en="TrackMyDex home catalogue" fetchpriority="high">
+                <figcaption data-fr="Catalogue et prix" data-en="Catalogue and pricing">Catalogue and pricing</figcaption>
+              </figure>
+              <figure class="carousel-slide" data-slide-panel hidden>
+                <img src="./assets/images/trackmydex-02.webp" width="1440" height="900" loading="lazy" alt="TrackMyDex set browser" data-alt-fr="Explorateur de séries TrackMyDex" data-alt-en="TrackMyDex set browser">
+                <figcaption data-fr="Séries et progression" data-en="Sets and progress">Sets and progress</figcaption>
+              </figure>
+              <figure class="carousel-slide mobile-preview" data-slide-panel hidden>
+                <img src="./assets/images/trackmydex-03.webp" width="390" height="844" loading="lazy" alt="TrackMyDex responsive mobile home page" data-alt-fr="Accueil mobile responsive de TrackMyDex" data-alt-en="TrackMyDex responsive mobile home page">
+                <figcaption data-fr="Application mobile responsive" data-en="Responsive mobile experience">Responsive mobile experience</figcaption>
+              </figure>
+            </div>
+            <div class="carousel-footer">
+              <button class="carousel-control" type="button" data-carousel-prev aria-label="Previous image">‹</button>
+              <div class="carousel-dots" aria-label="Choose an image">
+                <button type="button" data-slide="0" aria-pressed="true" aria-label="Show image 1"></button>
+                <button type="button" data-slide="1" aria-pressed="false" aria-label="Show image 2"></button>
+                <button type="button" data-slide="2" aria-pressed="false" aria-label="Show image 3"></button>
+              </div>
+              <span class="carousel-position" aria-live="polite">1 / 3</span>
+              <button class="carousel-control" type="button" data-carousel-next aria-label="Next image">›</button>
+            </div>
+          </div>
         </article>
-        <article class="project-card" data-tilt>
-          <a class="project-visual" href="https://plusenpoche.fr" target="_blank" rel="noreferrer" aria-label="Plus en Poche"><img src="./assets/images/plus-en-poche.webp" width="1365" height="768" loading="lazy" alt="Aperçu complet du site Plus en Poche" data-alt-fr="Aperçu complet du site Plus en Poche" data-alt-en="Full preview of the Plus en Poche website"><span>plusenpoche.fr</span></a>
-          <div class="project-copy"><div class="status live" data-fr="En ligne" data-en="Live">En ligne</div><h3>Plus en Poche</h3><p data-fr="Simulateur de droits et outils pour comparer ses dépenses courantes." data-en="Benefits estimator and tools for comparing everyday expenses.">Simulateur de droits et outils pour comparer ses dépenses courantes.</p><a class="project-link" href="https://plusenpoche.fr" target="_blank" rel="noreferrer" data-fr="Ouvrir le site" data-en="Visit website">Ouvrir le site</a></div>
+
+        <article class="project-showcase">
+          <div class="project-copy">
+            <div class="project-meta"><span class="status live" data-fr="En ligne" data-en="Live">Live</span><span>plusenpoche.fr</span></div>
+            <h3>Plus en Poche</h3>
+            <p data-fr="Un simulateur de droits sociaux complété par des outils pour comparer les dépenses courantes et trouver des prix locaux." data-en="A benefits estimator with tools for comparing everyday expenses and finding local prices.">A benefits estimator with tools for comparing everyday expenses and finding local prices.</p>
+            <ul class="project-features" aria-label="Features">
+              <li data-fr="Estimation des droits" data-en="Benefits estimates">Benefits estimates</li>
+              <li data-fr="Prix autour de soi" data-en="Local prices">Local prices</li>
+              <li data-fr="Comparateurs pratiques" data-en="Practical comparison tools">Practical comparison tools</li>
+            </ul>
+            <a class="project-link" href="https://plusenpoche.fr" target="_blank" rel="noreferrer" data-fr="Ouvrir Plus en Poche" data-en="Visit Plus en Poche">Visit Plus en Poche</a>
+          </div>
+          <div class="project-gallery" data-carousel tabindex="0" role="region" aria-roledescription="carousel" aria-label="Plus en Poche previews">
+            <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>plusenpoche.fr</span></div>
+            <div class="carousel-viewport">
+              <figure class="carousel-slide" data-slide-panel>
+                <img src="./assets/images/plus-en-poche-01.webp" width="1440" height="900" loading="lazy" alt="Plus en Poche home page" data-alt-fr="Page d’accueil de Plus en Poche" data-alt-en="Plus en Poche home page">
+                <figcaption data-fr="Accueil et outils" data-en="Home and tools">Home and tools</figcaption>
+              </figure>
+              <figure class="carousel-slide" data-slide-panel hidden>
+                <img src="./assets/images/plus-en-poche-02.webp" width="1440" height="900" loading="lazy" alt="Plus en Poche benefits questionnaire" data-alt-fr="Questionnaire de droits Plus en Poche" data-alt-en="Plus en Poche benefits questionnaire">
+                <figcaption data-fr="Questionnaire de droits" data-en="Benefits questionnaire">Benefits questionnaire</figcaption>
+              </figure>
+              <figure class="carousel-slide" data-slide-panel hidden>
+                <img src="./assets/images/plus-en-poche-03.webp" width="1440" height="900" loading="lazy" alt="Plus en Poche fuel price map" data-alt-fr="Carte des prix du carburant Plus en Poche" data-alt-en="Plus en Poche fuel price map">
+                <figcaption data-fr="Prix du carburant" data-en="Fuel prices">Fuel prices</figcaption>
+              </figure>
+            </div>
+            <div class="carousel-footer">
+              <button class="carousel-control" type="button" data-carousel-prev aria-label="Previous image">‹</button>
+              <div class="carousel-dots" aria-label="Choose an image"><button type="button" data-slide="0" aria-pressed="true" aria-label="Show image 1"></button><button type="button" data-slide="1" aria-pressed="false" aria-label="Show image 2"></button><button type="button" data-slide="2" aria-pressed="false" aria-label="Show image 3"></button></div>
+              <span class="carousel-position" aria-live="polite">1 / 3</span>
+              <button class="carousel-control" type="button" data-carousel-next aria-label="Next image">›</button>
+            </div>
+          </div>
         </article>
-        <article class="project-card" data-tilt>
-          <a class="project-visual" href="https://stefficouture.fr" target="_blank" rel="noreferrer" aria-label="Steffi Couture"><img src="./assets/images/steffi-couture.webp" width="1365" height="768" loading="lazy" alt="Aperçu complet du site Steffi Couture" data-alt-fr="Aperçu complet du site Steffi Couture" data-alt-en="Full preview of the Steffi Couture website"><span>stefficouture.fr</span></a>
-          <div class="project-copy"><div class="status live" data-fr="En ligne" data-en="Live">En ligne</div><h3>Steffi Couture</h3><p data-fr="Présentation, tarifs et réservation pour une couturière à domicile dans le Var." data-en="Services, pricing and booking for a home seamstress in southern France.">Présentation, tarifs et réservation pour une couturière à domicile dans le Var.</p><a class="project-link" href="https://stefficouture.fr" target="_blank" rel="noreferrer" data-fr="Ouvrir le site" data-en="Visit website">Ouvrir le site</a></div>
+
+        <article class="project-showcase">
+          <div class="project-copy">
+            <div class="project-meta"><span class="status live" data-fr="En ligne" data-en="Live">Live</span><span>stefficouture.fr</span></div>
+            <h3>Steffi Couture</h3>
+            <p data-fr="Un site local pour découvrir les prestations, consulter les tarifs et réserver une retouche à domicile dans le Var." data-en="A local business website for discovering services, checking prices and booking home alterations in southern France.">A local business website for discovering services, checking prices and booking home alterations in southern France.</p>
+            <ul class="project-features" aria-label="Features">
+              <li data-fr="Prise de rendez-vous" data-en="Appointment booking">Appointment booking</li>
+              <li data-fr="Tarifs publics" data-en="Public pricing">Public pricing</li>
+              <li data-fr="Réalisations réelles" data-en="Real work gallery">Real work gallery</li>
+            </ul>
+            <a class="project-link" href="https://stefficouture.fr" target="_blank" rel="noreferrer" data-fr="Ouvrir Steffi Couture" data-en="Visit Steffi Couture">Visit Steffi Couture</a>
+          </div>
+          <div class="project-gallery" data-carousel tabindex="0" role="region" aria-roledescription="carousel" aria-label="Steffi Couture previews">
+            <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>stefficouture.fr</span></div>
+            <div class="carousel-viewport">
+              <figure class="carousel-slide" data-slide-panel><img src="./assets/images/steffi-couture-01.webp" width="1440" height="900" loading="lazy" alt="Steffi Couture home page" data-alt-fr="Page d’accueil de Steffi Couture" data-alt-en="Steffi Couture home page"><figcaption data-fr="Présentation du service" data-en="Service overview">Service overview</figcaption></figure>
+              <figure class="carousel-slide" data-slide-panel hidden><img src="./assets/images/steffi-couture-02.webp" width="1440" height="900" loading="lazy" alt="Steffi Couture pricing page" data-alt-fr="Tarifs de Steffi Couture" data-alt-en="Steffi Couture pricing page"><figcaption data-fr="Tarifs détaillés" data-en="Detailed pricing">Detailed pricing</figcaption></figure>
+              <figure class="carousel-slide" data-slide-panel hidden><img src="./assets/images/steffi-couture-03.webp" width="1440" height="900" loading="lazy" alt="Steffi Couture work gallery" data-alt-fr="Réalisations de Steffi Couture" data-alt-en="Steffi Couture work gallery"><figcaption data-fr="Réalisations" data-en="Work gallery">Work gallery</figcaption></figure>
+            </div>
+            <div class="carousel-footer">
+              <button class="carousel-control" type="button" data-carousel-prev aria-label="Previous image">‹</button>
+              <div class="carousel-dots" aria-label="Choose an image"><button type="button" data-slide="0" aria-pressed="true" aria-label="Show image 1"></button><button type="button" data-slide="1" aria-pressed="false" aria-label="Show image 2"></button><button type="button" data-slide="2" aria-pressed="false" aria-label="Show image 3"></button></div>
+              <span class="carousel-position" aria-live="polite">1 / 3</span>
+              <button class="carousel-control" type="button" data-carousel-next aria-label="Next image">›</button>
+            </div>
+          </div>
         </article>
-        <article class="project-card" data-tilt>
-          <a class="project-visual" href="https://aoclair.fr" target="_blank" rel="noreferrer" aria-label="AOclair"><img src="./assets/images/aoclair.webp" width="1365" height="768" loading="lazy" alt="Aperçu complet du site AOclair" data-alt-fr="Aperçu complet du site AOclair" data-alt-en="Full preview of the AOclair website"><span>aoclair.fr</span></a>
-          <div class="project-copy"><div class="status live" data-fr="En ligne" data-en="Live">En ligne</div><h3>AOclair</h3><p data-fr="Analyse et préparation de réponses aux appels d’offres." data-en="Analysis and preparation of tender responses.">Analyse et préparation de réponses aux appels d’offres.</p><a class="project-link" href="https://aoclair.fr" target="_blank" rel="noreferrer" data-fr="Ouvrir le site" data-en="Visit website">Ouvrir le site</a></div>
+
+        <article class="project-showcase">
+          <div class="project-copy">
+            <div class="project-meta"><span class="status live" data-fr="En ligne" data-en="Live">Live</span><span>aoclair.fr</span></div>
+            <h3>AOclair</h3>
+            <p data-fr="Un service qui transforme un dossier d’appel d’offres en exigences, points de vigilance et structure de réponse directement exploitables." data-en="A service that turns tender documents into requirements, risk points and an actionable response structure.">A service that turns tender documents into requirements, risk points and an actionable response structure.</p>
+            <ul class="project-features" aria-label="Features">
+              <li data-fr="Lecture du dossier" data-en="Document review">Document review</li>
+              <li data-fr="Points de vigilance" data-en="Risk points">Risk points</li>
+              <li data-fr="Structure de réponse" data-en="Response structure">Response structure</li>
+            </ul>
+            <a class="project-link" href="https://aoclair.fr" target="_blank" rel="noreferrer" data-fr="Ouvrir AOclair" data-en="Visit AOclair">Visit AOclair</a>
+          </div>
+          <div class="project-gallery" data-carousel tabindex="0" role="region" aria-roledescription="carousel" aria-label="AOclair previews">
+            <div class="browser-bar" aria-hidden="true"><i></i><i></i><i></i><span>aoclair.fr</span></div>
+            <div class="carousel-viewport">
+              <figure class="carousel-slide" data-slide-panel><img src="./assets/images/aoclair-01.webp" width="1440" height="900" loading="lazy" alt="AOclair home page" data-alt-fr="Page d’accueil d’AOclair" data-alt-en="AOclair home page"><figcaption data-fr="Présentation du service" data-en="Service overview">Service overview</figcaption></figure>
+              <figure class="carousel-slide" data-slide-panel hidden><img src="./assets/images/aoclair-02.webp" width="1440" height="900" loading="lazy" alt="AOclair pricing page" data-alt-fr="Formules proposées par AOclair" data-alt-en="AOclair pricing page"><figcaption data-fr="Formules" data-en="Services">Services</figcaption></figure>
+              <figure class="carousel-slide" data-slide-panel hidden><img src="./assets/images/aoclair-03.webp" width="1440" height="900" loading="lazy" alt="AOclair free analysis page" data-alt-fr="Page d’analyse gratuite AOclair" data-alt-en="AOclair free analysis page"><figcaption data-fr="Analyse gratuite" data-en="Free analysis">Free analysis</figcaption></figure>
+            </div>
+            <div class="carousel-footer">
+              <button class="carousel-control" type="button" data-carousel-prev aria-label="Previous image">‹</button>
+              <div class="carousel-dots" aria-label="Choose an image"><button type="button" data-slide="0" aria-pressed="true" aria-label="Show image 1"></button><button type="button" data-slide="1" aria-pressed="false" aria-label="Show image 2"></button><button type="button" data-slide="2" aria-pressed="false" aria-label="Show image 3"></button></div>
+              <span class="carousel-position" aria-live="polite">1 / 3</span>
+              <button class="carousel-control" type="button" data-carousel-next aria-label="Next image">›</button>
+            </div>
+          </div>
         </article>
       </div>
     </section>
   </main>
+
   <footer><p>© 2026 Swan Carenini</p><div><a href="https://github.com/swanca" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/swan-c-35044b11a/" target="_blank" rel="noreferrer">LinkedIn</a></div></footer>
 </body>
 </html>
