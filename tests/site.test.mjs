@@ -64,3 +64,15 @@ test('chaque projet possède un visuel local et un texte alternatif bilingue', a
   assert.equal([...home.matchAll(/data-alt-fr=/g)].length, 4);
   assert.equal([...home.matchAll(/data-alt-en=/g)].length, 4);
 });
+
+test('la page des dépôts charge et filtre les dépôts publics en sécurité', async () => {
+  const script = await read('assets/js/repos.js');
+
+  assert.match(script, /api\.github\.com\/users\/swanca\/repos\?per_page=100&sort=updated/);
+  assert.match(script, /!repo\.fork/);
+  assert.match(script, /repo\.name !== 'swanca\.github\.io'/);
+  assert.match(script, /new Date\(b\.updated_at\) - new Date\(a\.updated_at\)/);
+  assert.match(script, /Impossible de charger les dépôts/);
+  assert.match(script, /Could not load repositories/);
+  assert.match(script, /textContent/);
+});
