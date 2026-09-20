@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { access, readFile } from 'node:fs/promises';
 import test from 'node:test';
 
 const root = new URL('../', import.meta.url);
@@ -75,4 +75,23 @@ test('la page des dépôts charge et filtre les dépôts publics en sécurité',
   assert.match(script, /Impossible de charger les dépôts/);
   assert.match(script, /Could not load repositories/);
   assert.match(script, /textContent/);
+});
+
+test('le site fournit les fichiers et métadonnées nécessaires à GitHub Pages', async () => {
+  const [home, repos, robots, sitemap, notFound] = await Promise.all([
+    read('index.html'),
+    read('repos/index.html'),
+    read('robots.txt'),
+    read('sitemap.xml'),
+    read('404.html'),
+  ]);
+
+  assert.match(home, /rel="canonical" href="https:\/\/swanca\.github\.io\/"/);
+  assert.match(repos, /rel="canonical" href="https:\/\/swanca\.github\.io\/repos\/"/);
+  assert.match(home, /property="og:image"/);
+  assert.match(repos, /property="og:image"/);
+  assert.match(robots, /Sitemap: https:\/\/swanca\.github\.io\/sitemap\.xml/);
+  assert.match(sitemap, /https:\/\/swanca\.github\.io\/repos\//);
+  assert.match(notFound, /href="\/"/);
+  await access(new URL('.nojekyll', root));
 });
