@@ -53,3 +53,14 @@ test('la présentation couvre mobile, clavier et mouvement réduit', async () =>
   assert.match(css, /:focus-visible/);
   assert.match(css, /overflow-x:\s*clip/);
 });
+
+test('chaque projet possède un visuel local et un texte alternatif bilingue', async () => {
+  const home = await read('index.html');
+  for (const name of ['plus-en-poche', 'steffi-couture', 'aoclair', 'trackmydex']) {
+    const stat = await import('node:fs/promises').then(({ stat }) => stat(new URL(`assets/images/${name}.webp`, root)));
+    assert.ok(stat.size > 10_000, name);
+    assert.match(home, new RegExp(`assets/images/${name}\\.webp`));
+  }
+  assert.equal([...home.matchAll(/data-alt-fr=/g)].length, 4);
+  assert.equal([...home.matchAll(/data-alt-en=/g)].length, 4);
+});
