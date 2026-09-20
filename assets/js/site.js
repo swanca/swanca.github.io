@@ -1,15 +1,16 @@
 (() => {
-  const STORAGE_KEY = 'swanca-locale';
+const STORAGE_KEY = 'swanca-locale';
+const THEME_KEY = 'swanca-theme';
   const supported = new Set(['fr', 'en']);
 
   function resolveLocale() {
     const stored = localStorage.getItem(STORAGE_KEY);
     if (supported.has(stored)) return stored;
-    return navigator.language.toLowerCase().startsWith('en') ? 'en' : 'fr';
+return 'en';
   }
 
   function setLocale(locale) {
-    const next = supported.has(locale) ? locale : 'fr';
+const next = supported.has(locale) ? locale : 'en';
     document.documentElement.lang = next;
     document.querySelectorAll('[data-fr][data-en]').forEach((node) => {
       node.textContent = node.dataset[next];
@@ -21,11 +22,31 @@
       button.setAttribute('aria-pressed', String(button.dataset.locale === next));
     });
     document.title = document.body.dataset[next === 'fr' ? 'titleFr' : 'titleEn'];
-    localStorage.setItem(STORAGE_KEY, next);
-    document.dispatchEvent(new CustomEvent('portfolio:locale', { detail: next }));
-  }
+localStorage.setItem(STORAGE_KEY, next);
+document.dispatchEvent(new CustomEvent('portfolio:locale', { detail: next }));
+}
+
+function resolveTheme() {
+const stored = localStorage.getItem(THEME_KEY);
+if (stored === 'light' || stored === 'dark') return stored;
+return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+function setTheme(theme) {
+const next = theme === 'dark' ? 'dark' : 'light';
+document.documentElement.dataset.theme = next;
+document.querySelectorAll('[data-theme-toggle]').forEach((button) => {
+button.setAttribute('aria-pressed', String(next === 'dark'));
+button.dataset.activeTheme = next;
+});
+localStorage.setItem(THEME_KEY, next);
+}
 
   window.PortfolioLocale = { setLocale, resolveLocale };
   document.querySelectorAll('[data-locale]').forEach((button) => button.addEventListener('click', () => setLocale(button.dataset.locale)));
+  document.querySelectorAll('[data-theme-toggle]').forEach((button) => button.addEventListener('click', () => {
+  setTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark');
+  }));
+  setTheme(resolveTheme());
   setLocale(resolveLocale());
 })();

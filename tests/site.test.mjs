@@ -9,7 +9,7 @@ test('les deux pages du portfolio existent et sont bilingues', async () => {
   const [home, repos] = await Promise.all([read('index.html'), read('repos/index.html')]);
 
   for (const html of [home, repos]) {
-    assert.match(html, /<html[^>]+lang="fr"/);
+    assert.match(html, /<html[^>]+lang="en"/);
     const fr = [...html.matchAll(/data-fr=/g)].length;
     const en = [...html.matchAll(/data-en=/g)].length;
     assert.ok(fr > 5);
@@ -38,9 +38,12 @@ test('le contrôleur de langue mémorise un choix français ou anglais', async (
   const script = await read('assets/js/site.js');
 
   assert.match(script, /swanca-locale/);
-  assert.match(script, /navigator\.language/);
+  assert.match(script, /return 'en'/);
   assert.match(script, /localStorage\.setItem/);
   assert.match(script, /document\.documentElement\.lang/);
+  assert.match(script, /swanca-theme/);
+  assert.match(script, /prefers-color-scheme: dark/);
+  assert.match(script, /data-theme-toggle/);
 });
 
 test('la présentation couvre mobile, clavier et mouvement réduit', async () => {
@@ -52,6 +55,7 @@ test('la présentation couvre mobile, clavier et mouvement réduit', async () =>
   assert.match(css, /@media\s*\(prefers-reduced-motion:\s*reduce\)/);
   assert.match(css, /:focus-visible/);
   assert.match(css, /overflow-x:\s*clip/);
+  assert.match(css, /html\[data-theme="dark"\]/);
 });
 
 test('chaque projet possède un visuel local et un texte alternatif bilingue', async () => {

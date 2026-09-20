@@ -10,6 +10,18 @@
   --max: 1240px;
 }
 
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #0c1422;
+  --ink: #eef4ff;
+  --muted: #a7b4c8;
+  --blue: #8aacff;
+  --blue-pale: #17294d;
+  --yellow: #f4c95d;
+  --white: #121d2e;
+  --line: #34445b;
+}
+
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
@@ -77,6 +89,18 @@ a:focus-visible, button:focus-visible {
 .site-header nav a:hover, .site-header nav a.active, .header-links > a:hover { color: var(--ink); }
 .site-header nav a.active { box-shadow: inset 0 -2px var(--blue); }
 .header-links { justify-content: flex-end; }
+
+.theme-toggle {
+  border: 1px solid var(--line);
+  padding: .42rem .62rem;
+  background: var(--white);
+  color: var(--ink);
+  font-size: .72rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+.theme-toggle::before { content: '☼'; margin-right: .35rem; }
+.theme-toggle[data-active-theme="dark"]::before { content: '☾'; }
 
 .locale-switch {
   display: inline-flex;
@@ -217,6 +241,9 @@ a.browser-frame:hover { border-color: var(--blue); }
   background: #eef2f7;
 }
 .browser-bar i { width: 8px; height: 8px; border-radius: 50%; background: #a5b0bf; }
+html[data-theme="dark"] .browser-bar { background: #182538; }
+html[data-theme="dark"] .browser-frame { box-shadow: 14px 18px 0 #050b14; }
+html[data-theme="dark"] .status.soon { background: #42350d; color: #ffe89b; }
 .browser-bar b {
   margin-left: 8px;
   overflow: hidden;
@@ -289,7 +316,7 @@ footer a:hover { color: var(--ink); }
 
 @media (max-width: 760px) {
   .site-header { min-height: 66px; gap: 1rem; padding-inline: 18px; }
-  .header-links { gap: .7rem; }
+  .header-links { gap: .45rem; }
   .header-links > a { display: none; }
   .intro, .projects, .repository-section { width: min(calc(100% - 36px), var(--max)); }
   .intro { min-height: 430px; padding: 3rem 0; }
@@ -301,6 +328,7 @@ footer a:hover { color: var(--ink); }
   .project { padding: 3.5rem 0; }
   .project h3 { font-size: 2.7rem; }
   .browser-frame { box-shadow: 7px 9px 0 #dfe6ef; }
+  html[data-theme="dark"] .browser-frame { box-shadow: 7px 9px 0 #050b14; }
   .repository-grid { grid-template-columns: 1fr; }
   .repo-card, .repo-card:nth-child(even) { border-right: 0; }
   footer { min-height: 95px; padding-inline: 18px; }
@@ -309,7 +337,8 @@ footer a:hover { color: var(--ink); }
 @media (max-width: 430px) {
   .header-links { gap: .4rem; }
   .locale-switch button { min-width: 31px; }
-  .intro h1 { font-size: 3.3rem; }
+  .intro h1 { font-size: 3rem; overflow-wrap: anywhere; }
+  .theme-toggle { padding-inline: .5rem; }
   footer { align-items: flex-start; flex-direction: column; gap: .8rem; }
 }
 
