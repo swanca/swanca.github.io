@@ -42,3 +42,14 @@ test('le contrôleur de langue mémorise un choix français ou anglais', async (
   assert.match(script, /localStorage\.setItem/);
   assert.match(script, /document\.documentElement\.lang/);
 });
+
+test('la présentation couvre mobile, clavier et mouvement réduit', async () => {
+  const [home, repos, css] = await Promise.all([read('index.html'), read('repos/index.html'), read('assets/css/styles.css')]);
+
+  assert.match(home, /assets\/css\/styles\.css/);
+  assert.match(repos, /assets\/css\/styles\.css/);
+  assert.match(css, /@media\s*\(max-width:\s*760px\)/);
+  assert.match(css, /@media\s*\(prefers-reduced-motion:\s*reduce\)/);
+  assert.match(css, /:focus-visible/);
+  assert.match(css, /overflow-x:\s*clip/);
+});
