@@ -42,6 +42,28 @@ button.dataset.activeTheme = next;
 localStorage.setItem(THEME_KEY, next);
 }
 
+function enablePointerMotion() {
+if (!matchMedia('(pointer: fine)').matches || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+document.querySelectorAll('[data-tilt]').forEach((card) => {
+let frame = 0;
+card.addEventListener('pointermove', (event) => {
+cancelAnimationFrame(frame);
+frame = requestAnimationFrame(() => {
+const bounds = card.getBoundingClientRect();
+const x = (event.clientX - bounds.left) / bounds.width - .5;
+const y = (event.clientY - bounds.top) / bounds.height - .5;
+card.style.setProperty('--tilt-x', `${(-y * 1.8).toFixed(2)}deg`);
+card.style.setProperty('--tilt-y', `${(x * 1.8).toFixed(2)}deg`);
+});
+});
+card.addEventListener('pointerleave', () => {
+cancelAnimationFrame(frame);
+card.style.setProperty('--tilt-x', '0deg');
+card.style.setProperty('--tilt-y', '0deg');
+});
+});
+}
+
   window.PortfolioLocale = { setLocale, resolveLocale };
   document.querySelectorAll('[data-locale]').forEach((button) => button.addEventListener('click', () => setLocale(button.dataset.locale)));
   document.querySelectorAll('[data-theme-toggle]').forEach((button) => button.addEventListener('click', () => {
@@ -49,4 +71,5 @@ localStorage.setItem(THEME_KEY, next);
   }));
   setTheme(resolveTheme());
   setLocale(resolveLocale());
+  enablePointerMotion();
 })();

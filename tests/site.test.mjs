@@ -25,13 +25,14 @@ test('les projets et profils publics utilisent les bonnes adresses', async () =>
     'https://plusenpoche.fr',
     'https://stefficouture.fr',
     'https://aoclair.fr',
+    'https://trackmydex.com',
     'https://github.com/swanca',
     'https://www.linkedin.com/in/swan-c-35044b11a/',
   ]) assert.ok(home.includes(url), url);
 
-  assert.match(home, /TrackMyDex/);
-  assert.match(home, /Bientôt disponible/);
-  assert.match(home, /Coming soon/);
+  assert.ok(home.indexOf('href="https://trackmydex.com"') < home.indexOf('href="https://plusenpoche.fr"'));
+  assert.doesNotMatch(home, /project-index/);
+  assert.doesNotMatch(home, /Coming soon/);
 });
 
 test('le contrôleur de langue mémorise un choix français ou anglais', async () => {
@@ -44,6 +45,8 @@ test('le contrôleur de langue mémorise un choix français ou anglais', async (
   assert.match(script, /swanca-theme/);
   assert.match(script, /prefers-color-scheme: dark/);
   assert.match(script, /data-theme-toggle/);
+  assert.match(script, /\[data-tilt\]/);
+  assert.match(script, /requestAnimationFrame/);
 });
 
 test('la présentation couvre mobile, clavier et mouvement réduit', async () => {
@@ -56,6 +59,8 @@ test('la présentation couvre mobile, clavier et mouvement réduit', async () =>
   assert.match(css, /:focus-visible/);
   assert.match(css, /overflow-x:\s*clip/);
   assert.match(css, /html\[data-theme="dark"\]/);
+  assert.match(css, /object-fit:\s*contain/);
+  assert.match(css, /grid-template-columns:\s*repeat\(2/);
 });
 
 test('chaque projet possède un visuel local et un texte alternatif bilingue', async () => {
